@@ -111,6 +111,16 @@
     }, { passive: true });
   }
 
+  // Chat launcher: placeholder until the assistant is built.
+  var fab = document.querySelector('.chat-fab');
+  var tip = document.getElementById('chat-tip');
+  if (fab && tip) {
+    fab.addEventListener('click', function () {
+      tip.hidden = !tip.hidden;
+      fab.setAttribute('aria-expanded', String(!tip.hidden));
+    });
+  }
+
   var yr = document.getElementById('year');
   if (yr) yr.textContent = new Date().getFullYear();
 })();
