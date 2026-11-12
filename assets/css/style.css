@@ -133,7 +133,11 @@ h3 { font-weight: 500; letter-spacing: -0.03em; color: var(--white); }
 .nx-cols > div + div { padding-left: 28px; border-left: 1px solid var(--line); }
 .nx-cols h4 { font-weight: 500; font-size: 24px; letter-spacing: -0.03em; color: var(--white); margin: 22px 0 10px; }
 .nx-cols p:not(.tag) { color: var(--muted); font-size: 14.5px; line-height: 1.55; }
-.nx-cols img { border-radius: 14px; margin-top: 18px; }
+@media (min-width: 961px) { .nx-cols p:not(.tag) { min-height: 6.3em; } }
+.shots { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 22px; }
+.shots img { width: 100%; border-radius: 12px; transition: transform .6s var(--ease); }
+.shots img.main { grid-column: 1 / -1; border-radius: 16px; }
+.shots img:hover { transform: scale(1.02); }
 
 /* toolkit */
 .grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 14px; margin-top: 34px; }
