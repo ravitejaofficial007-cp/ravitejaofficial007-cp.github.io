@@ -50,17 +50,24 @@
   var sStat = document.querySelector('.shot-stat');
   var sLabel = document.querySelector('.shot-label');
   var sText = document.querySelector('.shot-text');
+  var sLink = document.querySelector('.shot-link');
   var timer;
 
   rows.forEach(function (row) {
     var d = row.dataset;
-    var inline = document.createElement('span');
+    var inline = document.createElement('div');
     inline.className = 'inline';
     var b = document.createElement('b'); b.textContent = d.stat;
     var s = document.createElement('small'); s.textContent = d.label;
-    inline.appendChild(b); inline.appendChild(s);
-    inline.appendChild(document.createTextNode(d.text));
-    row.appendChild(inline);
+    var p = document.createElement('p'); p.textContent = d.text;
+    inline.appendChild(b); inline.appendChild(s); inline.appendChild(p);
+    if (d.url) {
+      var a = document.createElement('a');
+      a.className = 'verify'; a.href = d.url; a.target = '_blank'; a.rel = 'noopener';
+      a.textContent = d.link + ' \u2197';
+      inline.appendChild(a);
+    }
+    row.insertAdjacentElement('afterend', inline);
     row.setAttribute('aria-pressed', row.classList.contains('on'));
     row.addEventListener('click', function () { activate(row, true); });
     row.addEventListener('mouseenter', function () {
@@ -72,6 +79,7 @@
     var d = row.dataset;
     sTitle.textContent = row.querySelector('span').textContent + '  /  ' + row.querySelector('em').textContent;
     sStat.textContent = d.stat; sLabel.textContent = d.label; sText.textContent = d.text;
+    if (sLink) { sLink.hidden = !d.url; if (d.url) { sLink.href = d.url; sLink.textContent = d.link + ' \u2197'; } }
   }
   function activate(row, animate) {
     if (row.classList.contains('on') && animate) return;
