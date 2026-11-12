@@ -150,6 +150,15 @@ h3 { font-weight: 500; letter-spacing: -0.03em; color: var(--white); }
 .edu-card h3 { font-size: clamp(22px, 2.2vw, 30px); line-height: 1.1; margin: 40px 0 10px; }
 .edu-card p:not(.tag) { color: var(--muted); font-size: 14.5px; }
 
+.certs-head { margin-top: clamp(56px, 7vw, 96px); }
+.certs { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-top: 30px; }
+.cert { padding: 24px; display: flex; flex-direction: column; transition: border-color .3s, transform .5s var(--ease); }
+.cert:hover { border-color: rgba(255,255,255,.35); transform: translateY(-4px); }
+.cert h3 { font-size: 22px; line-height: 1.15; margin: 34px 0 10px; }
+.cert p:not(.tag) { color: var(--muted); font-size: 14.5px; line-height: 1.55; margin-bottom: 18px; }
+.verify { margin-top: auto; font-size: 13px; color: var(--white); border-bottom: 1px solid rgba(255,255,255,.3); align-self: flex-start; padding-bottom: 2px; transition: border-color .25s; }
+.verify:hover { border-color: var(--white); }
+
 /* blog */
 .page-head, .post { padding-top: clamp(120px, 14vw, 190px); }
 .posts { margin-top: clamp(48px, 7vw, 96px); border-bottom: 1px solid var(--line); }
@@ -211,6 +220,7 @@ h3 { font-weight: 500; letter-spacing: -0.03em; color: var(--white); }
   .nx-cols { grid-template-columns: 1fr; border-top: 0; }
   .nx-cols > div, .nx-cols > div + div { padding: 22px 0 0; border-left: 0; border-top: 1px solid var(--line); margin-top: 22px; }
   .grid { grid-template-columns: repeat(3, 1fr); }
+  .certs { grid-template-columns: 1fr 1fr; }
   .stats { grid-template-columns: 1fr 1fr; row-gap: 30px; }
   .stat:nth-child(3) { padding-left: 0; border-left: 0; }
   .head-row, .intro-row { flex-direction: column; align-items: flex-start; }
@@ -221,7 +231,7 @@ h3 { font-weight: 500; letter-spacing: -0.03em; color: var(--white); }
   .hero-left { bottom: 132px; }
   .hero-card { left: var(--pad); right: var(--pad); width: auto; bottom: 40px; }
   .grid, .edu { grid-template-columns: 1fr 1fr; }
-  .edu { grid-template-columns: 1fr; }
+  .edu, .certs { grid-template-columns: 1fr; }
   .contact-inner { flex-direction: column; align-items: flex-start; }
   .side { text-align: left; }
   .btns { justify-content: flex-start; }
