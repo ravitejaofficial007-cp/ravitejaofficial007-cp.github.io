@@ -59,6 +59,9 @@ h3 { font-weight: 500; letter-spacing: -0.03em; color: var(--white); }
 .links { display: flex; gap: clamp(18px, 2.6vw, 38px); font-size: 14px; color: #bdbdbd; }
 .links a { transition: color .25s; }
 .links a:hover { color: var(--white); }
+.nav-right { display: flex; align-items: center; }
+.lang { font-size: 13px; letter-spacing: .08em; color: #bdbdbd; margin-right: 16px; padding: 6px 2px; transition: color .25s; }
+.lang:hover { color: var(--white); }
 
 /* hero */
 .hero { position: relative; height: 100svh; min-height: 620px; max-height: 1000px; overflow: hidden; }
@@ -232,7 +235,7 @@ h3 { font-weight: 500; letter-spacing: -0.03em; color: var(--white); }
 @media (max-width: 960px) {
   .links { margin-left: auto; margin-right: 18px; }
   .links a { display: none; }
-  .links a[href='blog/'], .links a[href='./'] { display: block; }
+  .links a[href='blog/'], .links a[href='./'], .links a[href='../blog/'] { display: block; }
   .post-row { grid-template-columns: 40px minmax(0, 1fr) 40px; padding: 24px 10px; }
   .post-row .post-sum, .post-row em { grid-column: 2; }
   .post-row b { grid-column: 3; grid-row: 1; }
