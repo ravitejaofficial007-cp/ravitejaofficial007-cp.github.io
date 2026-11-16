@@ -275,3 +275,6 @@ h3 { font-weight: 500; letter-spacing: -0.03em; color: var(--white); }
   .js .reveal, .js .wordmark i, .js .hero-subject, .js .hero-left, .js .hero-card, .js .hero-caption { opacity: 1; transform: none; transition: none; }
   .roll span, .row, .mini, .feature-views img { transition: none; }
 }
+
+.edu-card { position: relative; }
+.edu-logo { position: absolute; top: 24px; right: 24px; width: 56px; height: 56px; border-radius: 12px; }
