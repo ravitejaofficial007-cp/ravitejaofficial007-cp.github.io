@@ -51,6 +51,7 @@
   var sLabel = document.querySelector('.shot-label');
   var sText = document.querySelector('.shot-text');
   var sLink = document.querySelector('.shot-link');
+  var sArt = document.querySelector('.shot-art');
   var timer;
 
   rows.forEach(function (row) {
@@ -79,6 +80,7 @@
     var d = row.dataset;
     sTitle.textContent = row.querySelector('span').textContent + '  /  ' + row.querySelector('em').textContent;
     sStat.textContent = d.stat; sLabel.textContent = d.label; sText.textContent = d.text;
+    if (sArt) { sArt.hidden = !d.img; if (d.img) { var im = sArt.querySelector('img'); im.src = d.img; im.alt = d.imgAlt || ''; } }
     if (sLink) { sLink.hidden = !d.url; if (d.url) { sLink.href = d.url; sLink.textContent = d.link + ' \u2197'; } }
   }
   function activate(row, animate) {
