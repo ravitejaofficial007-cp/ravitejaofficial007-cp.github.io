@@ -276,5 +276,12 @@ h3 { font-weight: 500; letter-spacing: -0.03em; color: var(--white); }
   .roll span, .row, .mini, .feature-views img { transition: none; }
 }
 
-.edu-card { position: relative; }
-.edu-logo { position: absolute; top: 24px; right: 24px; width: 56px; height: 56px; border-radius: 12px; }
+.edu-logo { width: 64px; height: 64px; border-radius: 12px; display: block; }
+.edu-card.has-logo { display: grid; grid-template-columns: 64px 1fr; column-gap: 22px; align-content: start; }
+.edu-card.has-logo .tag { grid-column: 1 / -1; }
+.edu-card.has-logo .edu-logo { grid-column: 1; grid-row: 2 / span 2; align-self: start; margin-top: 40px; }
+.edu-card.has-logo h3, .edu-card.has-logo p:not(.tag) { grid-column: 2; }
+@media (max-width: 640px) {
+  .edu-card.has-logo { display: flex; flex-direction: column; }
+  .edu-card.has-logo .edu-logo { order: 5; margin-top: 18px; }
+}
