@@ -61,6 +61,12 @@
     var b = document.createElement('b'); b.textContent = d.stat;
     var s = document.createElement('small'); s.textContent = d.label;
     var p = document.createElement('p'); p.textContent = d.text;
+    if (d.img) {
+      var pic = document.createElement('img');
+      pic.src = d.img; pic.alt = d.imgAlt || ''; pic.loading = 'lazy';
+      if (d.imgStyle === 'banner') pic.className = 'banner';
+      inline.appendChild(pic);
+    }
     inline.appendChild(b); inline.appendChild(s); inline.appendChild(p);
     if (d.url) {
       var a = document.createElement('a');
